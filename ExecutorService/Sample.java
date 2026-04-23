@@ -1,7 +1,6 @@
 package ExecutorService;
 
 
-import javax.print.attribute.standard.RequestingUserName;
 import java.time.LocalTime;
 import java.util.concurrent.*;
 
@@ -135,5 +134,15 @@ class Variation4{
         Future<Integer> ans= pool.schedule(c,1,TimeUnit.SECONDS);
         System.out.println(ans.get());
 
+    }
+}
+/*
+Work stealing pool - parallel based on CPU core
+ */
+class Variation5{
+    public static void main(String[] args) {
+        int cores = Runtime.getRuntime().availableProcessors();
+        Executors.newWorkStealingPool();
+        System.out.println("CPU cores: " + cores);
     }
 }
