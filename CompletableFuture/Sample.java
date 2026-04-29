@@ -1,9 +1,6 @@
 package CompletableFuture;
 
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 /*
 Methods
@@ -17,6 +14,15 @@ anyOf
 thenCompose -> flatten completablefuture
 
 uses ForkJoinPool.commonPool() internally
+
+CPU-bound → waiting for CPU to compute
+ForkJoinPool
+parallelStream()
+
+I/O-bound → waiting for external systems
+CompletableFuture
+ExecutorService (larger thread pools)
+
  */
 public class Sample {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
