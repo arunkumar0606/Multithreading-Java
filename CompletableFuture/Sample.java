@@ -15,6 +15,8 @@ thenCombine
 allOf
 anyOf
 thenCompose -> flatten completablefuture
+
+uses ForkJoinPool.commonPool() internally
  */
 public class Sample {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
